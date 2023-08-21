@@ -15,7 +15,13 @@
 1. Clone this repository to your local machine.
 2. Install the required dependencies using the below command.
 ```bash
-pip install -r requirement.txt
+pip install google-api-python-client
+pip install isodate
+pip install streamlit
+pip install pandas
+pip install streamlit-option-menu
+pip install mysql-connector-python
+pip install pymongo
 ```
 3. Set up your [Google API credentials](https://support.google.com/googleapi/answer/6158862?hl=en) and enable the **YOUTUBE DATA API V3** service for YouTube data retrieval.
 4. Replace the API key in **data_scrapper.py** file with the generated API Key. 
