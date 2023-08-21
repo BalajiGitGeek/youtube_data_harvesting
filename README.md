@@ -3,11 +3,11 @@
 
 ## Features
 
-1. Data Retrieval: Input a YouTube channel ID to retrieve channel details, video statistics, and user engagement metrics via the Google API.
-2. MongoDB Data Lake: Store collected data in a MongoDB database for future reference and analysis.
-3. Multi-Channel Collection: Effortlessly gather data from up to 10 YouTube channels by simply clicking a button.
-4. SQL Database Migration: Seamlessly migrate data from the MongoDB data lake to a structured SQL database for efficient organization and analysis.
-5. Advanced Search: Utilize SQL database capabilities to conduct advanced searches, including table joins, for comprehensive insights.
+1. **Data Retrieval**: Input a YouTube channel ID to retrieve channel details, video statistics, and user engagement metrics via the Google API.
+2. **MongoDB Data Lake**: Store collected data in a MongoDB database for future reference and analysis.
+3. **Multi-Channel Collection**: Effortlessly gather data from up to 10 YouTube channels by simply clicking a button.
+4. **SQL Database Migration**: Seamlessly migrate data from the MongoDB data lake to a structured SQL database for efficient organization and analysis.
+5. **Advanced Search**: Utilize SQL database capabilities to conduct advanced searches, including table joins, for comprehensive insights.
 
 ## Getting Started
 
