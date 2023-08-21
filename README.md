@@ -27,7 +27,7 @@ Streamlit run main.py
 
 ## Usage
 1. Input a YouTube channel ID in the app interface to retrieve relevant data.
-2. Click the "Collect Data" button to gather information from selected channels and store it in the MongoDB data lake.
+2. Click the *STORE* button to gather information from selected channels and store it in the MongoDB data lake.
 3. Choose a channel to migrate its data from the data lake to the SQL database.
 4. Leverage the advanced search options to extract comprehensive insights from the SQL database.
 
