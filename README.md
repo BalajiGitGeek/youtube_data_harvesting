@@ -16,7 +16,7 @@
 ```bash
 pip install -r requirements.txt
 ```
-3. Set up your Google API credentials for YouTube data retrieval (add instructions or link to a guide here).
+3. Set up your [Google API credentials](https://support.google.com/googleapi/answer/6158862?hl=en) for YouTube data retrieval.
 4. Configure the MongoDB connection (provide steps or link to a guide).
 5. Run the Streamlit app using streamlit run main.py.
    
@@ -34,6 +34,6 @@ Streamlit run main.py
 Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, feel free to submit a pull request.
 
 ## Contact
-For inquiries or support, please contact [balajigurusamy99@gmail.com or 
-www.linkedin.com/in/balajiguru]
+For inquiries or support, please contact [GMAIL](balajigurusamy99@gmail.com) or 
+[LINKEDIN](www.linkedin.com/in/balajiguru)
 
