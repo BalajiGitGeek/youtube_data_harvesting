@@ -2,6 +2,8 @@ from pymongo import MongoClient
 from mysql.connector import connect
 import pandas as pd
 
+password = 'Balaji@1999'
+
 client = MongoClient('mongodb://localhost:27017/')
 mydb = client['youtube_scrapping_project']
 
@@ -9,7 +11,7 @@ mydb = client['youtube_scrapping_project']
 sql_db = connect(
     host = 'localhost',
     user = 'root',
-    password = 'Balaji@1999',
+    password = password,
     auth_plugin = 'mysql_native_password'
 )
 mycursor = sql_db.cursor()
