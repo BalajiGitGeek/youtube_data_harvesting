@@ -17,7 +17,7 @@
 pip install -r requirements.txt
 ```
 3. Set up your [Google API credentials](https://support.google.com/googleapi/answer/6158862?hl=en) and enable the *YOUTUBE DATA API V3* service for YouTube data retrieval.
-4. Replace the API key in *main.py* file with the generated API Key. 
+4. Replace the API key in *data_scrapper.py* file with the generated API Key. 
 5. Configure the MYSQL connection by replacing the existing password in *migrate_sql.py* file with your MYSQL password. 
 6. Run the Streamlit app using the below command.
    
