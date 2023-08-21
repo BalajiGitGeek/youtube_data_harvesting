@@ -1,4 +1,4 @@
-# YouTube Data Analysis 
+# YouTube-Data-Harvesting-and-Warehousing-using-SQL-MongoDB-and-Streamlit
  This application designed to facilitate the exploration and in-depth analysis of data from multiple YouTube channels. The app leverages the Google API to retrieve essential channel information, video statistics, and user engagement metrics. With features ranging from data storage in MongoDB to SQL database migration, this app provides a comprehensive platform for deriving insights and making informed decisions.
 
 ## Features
