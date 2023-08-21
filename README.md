@@ -16,9 +16,9 @@
 ```bash
 pip install -r requirements.txt
 ```
-3. Set up your [Google API credentials](https://support.google.com/googleapi/answer/6158862?hl=en) and enable the *YOUTUBE DATA API V3* service for YouTube data retrieval.
-4. Replace the API key in *data_scrapper.py* file with the generated API Key. 
-5. Configure the MYSQL connection by replacing the existing password in *migrate_sql.py* file with your MYSQL password. 
+3. Set up your [Google API credentials](https://support.google.com/googleapi/answer/6158862?hl=en) and enable the **YOUTUBE DATA API V3** service for YouTube data retrieval.
+4. Replace the API key in **data_scrapper.py** file with the generated API Key. 
+5. Configure the MYSQL connection by replacing the existing password in **migrate_sql.py** file with your MYSQL password. 
 6. Run the Streamlit app using the below command.
    
 ```bash
@@ -27,7 +27,7 @@ Streamlit run main.py
 
 ## Usage
 1. Input a YouTube channel ID in the app interface to retrieve relevant data.
-2. Click the *STORE* button to gather information from selected channels and store it in the MongoDB data lake.
+2. Click the **STORE** button to gather information from selected channels and store it in the MongoDB data lake.
 3. Choose a channel to migrate its data from the data lake to the SQL database.
 4. Leverage the advanced search options to extract comprehensive insights from the SQL database.
 
