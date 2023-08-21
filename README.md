@@ -29,7 +29,7 @@ pip install pymongo
 6. Run the Streamlit app using the below command.
    
 ```bash
-Streamlit run main.py
+streamlit run main.py
 ```
 
 ## Usage
