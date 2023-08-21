@@ -164,6 +164,13 @@ def seventh_query():
         seventh_query.append(each)
     return (pd.DataFrame(seventh_query,columns=["Channel Name","Total Views"]))
 
+def eighth_query():
+    mycursor.execute("SELECT channel_name FROM channel")
+    eighth_query = []
+    for each in mycursor:
+        eighth_query.append(each)
+    return (pd.DataFrame(eighth_query,columns=["Channel Name"]))
+
 def nighth_query():
     mycursor.execute("""
     SELECT channel.channel_name,AVG(video.duration) FROM video

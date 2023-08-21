@@ -100,7 +100,7 @@ if selected == "DATA ANALYSIS":
         st.write(migrate_sql.seventh_query())
 
     if st.checkbox("What are the names of all the channels that have published videos in the year 2022?",value=False):
-        st.write("dint wrote")
+        st.write(migrate_sql.eighth_query())
 
     if st.checkbox("What is the average duration of all videos in each channel, and what are their corresponding channel names?",value=False):
         st.write(migrate_sql.nighth_query())
