@@ -2,7 +2,8 @@ from pymongo import MongoClient
 from mysql.connector import connect
 import pandas as pd
 
-password = 'Balaji@1999'
+# Please Enter the MYSQL Password
+password = '*******'
 
 client = MongoClient('mongodb://localhost:27017/')
 mydb = client['youtube_scrapping_project']
@@ -76,12 +77,12 @@ def migration(channel):
                 mycursor.execute("INSERT INTO playlist(playlist_id,channel_id,playlist_name) VALUES(%s,%s,%s)",(channel_info["Playlist_Id"],channel_info["Channel_Id"],channel_info["Playlist_Name"]))
             elif each_document[each].get("Video_Id",0) and each_document[each].get("Video_Id",0) not in mysql_video_list():
                 video_data = each_document[each]
-                mycursor.execute("INSERT INTO video(video_id,playlist_id,video_name,video_description,view_count,like_count,dislike_count,comment_count,duration,thumbnail,caption_status) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(video_data["Video_Id"],playlist_id,video_data["Video_Name"],video_data["Video_Description"],video_data["View_Count"],video_data["Like_Count"],video_data["Dislike_Count"],video_data["Comment_Count"],video_data["Duration"],video_data["Thumbnail"],video_data["Caption_Status"]))
+                mycursor.execute("INSERT INTO video(video_id,playlist_id,video_name,video_description,view_count,like_count,dislike_count,comment_count,duration,thumbnail,caption_status,published_date) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(video_data["Video_Id"],playlist_id,video_data["Video_Name"],video_data["Video_Description"],video_data["View_Count"],video_data["Like_Count"],video_data["Dislike_Count"],video_data["Comment_Count"],video_data["Duration"],video_data["Thumbnail"],video_data["Caption_Status"],video_data["PublishedAt"].replace('T',' ').replace('Z','')))
                 video_id = each_document[each]["Video_Id"]
                 comments = each_document[each]["Comments"]
                 for each_comments in comments:
                     comment_info = comments[each_comments]
-                    mycursor.execute("INSERT INTO comment(comment_id,video_id,comment_text,comment_author) VALUES(%s,%s,%s,%s)",(comment_info["Comment_Id"],video_id,comment_info["Comment_Text"],comment_info["Comment_Author"]))
+                    mycursor.execute("INSERT INTO comment(comment_id,video_id,comment_text,comment_author,comment_published_date) VALUES(%s,%s,%s,%s,%s)",(comment_info["Comment_Id"],video_id,comment_info["Comment_Text"],comment_info["Comment_Author"],comment_info["Comment_PublishedAt"].replace('T',' ').replace('Z','')))
     sql_db.commit()
 
 def channel_list_query():
@@ -165,7 +166,10 @@ def seventh_query():
     return (pd.DataFrame(seventh_query,columns=["Channel Name","Total Views"]))
 
 def eighth_query():
-    mycursor.execute("SELECT channel_name FROM channel")
+    mycursor.execute("""
+                SELECT DISTINCT channel.channel_name FROM channel 
+                INNER JOIN playlist ON channel.channel_id = playlist.channel_id 
+                INNER JOIN video ON video.playlist_id = playlist.playlist_id WHERE video.published_date LIKE '2022%';""")
     eighth_query = []
     for each in mycursor:
         eighth_query.append(each)

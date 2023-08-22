@@ -1,7 +1,8 @@
 from googleapiclient.discovery import build
 import isodate
 
-API_KEY = 'AIzaSyD2vImG4A7GsE_ygI4cJMLzeTvR0bq38l4'
+# Please Enter the Generated API key
+API_KEY = '**************************'
 
 # Creating youtube service
 youtube = build('youtube', 'v3', developerKey=API_KEY)
@@ -141,7 +142,7 @@ def scrape_video_data(channel_id):
                     "Duration": isodate.parse_duration(response['items'][i]['contentDetails']['duration']).total_seconds(),
                     "Thumbnail": response['items'][i]['snippet']['thumbnails']['default'].get('url',''),
                     "Caption_Status": response['items'][i]['contentDetails'].get('caption',''),
-                    'Comments': scrape_video_comments(response['items'][i]['id']) if response['items'][i]['statistics'].get('commentCount',0) !=0 and type(response['items'][i]['statistics'].get('commentCount',0))==int else {}
+                    'Comments': scrape_video_comments(response['items'][i]['id']) if response['items'][i]['statistics'].get('commentCount',0) !=0 else {}
                     }
                 video_no = video_no+1
         final_json.append(videos_dict)
