@@ -91,18 +91,21 @@ def scrape_playlist_item_data(playlist_id):
 
 def scrape_video_comments(video_id):
     comments_dict = {}
-    request = youtube.commentThreads().list(
-        part="snippet,replies",
-        videoId= video_id
-    )
-    response = request.execute()
-    for i in range (len(response['items'])):
-        comments_dict['Comment_Id_'+str(i+1)] =  {
-                "Comment_Id": response['items'][i]['id'],
-                "Comment_Text": response['items'][i]['snippet']['topLevelComment']['snippet']['textOriginal'],
-                "Comment_Author":  response['items'][i]['snippet']['topLevelComment']['snippet']['authorDisplayName'],
-                "Comment_PublishedAt": response['items'][i]['snippet']['topLevelComment']['snippet']['publishedAt']
-            }
+    try:
+        request = youtube.commentThreads().list(
+            part="snippet,replies",
+            videoId= video_id
+        )
+        response = request.execute()
+        for i in range (len(response['items'])):
+            comments_dict['Comment_Id_'+str(i+1)] =  {
+                    "Comment_Id": response['items'][i]['id'],
+                    "Comment_Text": response['items'][i]['snippet']['topLevelComment']['snippet']['textOriginal'],
+                    "Comment_Author":  response['items'][i]['snippet']['topLevelComment']['snippet']['authorDisplayName'],
+                    "Comment_PublishedAt": response['items'][i]['snippet']['topLevelComment']['snippet']['publishedAt']
+                }
+    except Exception as e:
+        return comments_dict
     return comments_dict
 
 def scrape_video_data(channel_id):
